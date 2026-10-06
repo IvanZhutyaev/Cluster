@@ -1,23 +1,23 @@
 # Cluster - AI-powered Travel Platform
 
-Интерактивная платформа для планирования путешествий с AI-персонализацией, 3D турами и B2B решениями для бизнеса.
+An interactive travel planning platform with AI personalization, 3D tours, and B2B solutions for businesses.
 
-## 🌟 Ключевые фичи
+## 🌟 Key Features
 
-- **🎯 Вау-эффект**: Интерактивные 3D туры по достопримечательностям (AVALIN)
-- **🤖 AI персонализация**: Умные рекомендации на основе предпочтений
-- **💼 B2B ценность**: Кабинет партнёра для управления местами и спецпредложениями
-- **🗺️ Умные маршруты**: Сезонные рекомендации и оптимизация путешествий
-- **🔍 Семантический поиск**: Поиск мест на естественном языке
+- **🎯 Wow effect**: Interactive 3D tours of attractions (AVALIN)
+- **🤖 AI personalization**: Smart recommendations based on preferences
+- **💼 B2B value**: Partner dashboard for managing places and special offers
+- **🗺️ Smart routes**: Seasonal recommendations and travel optimization
+- **🔍 Semantic search**: Search for places in natural language
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### Требования
+### Requirements
 
-- Docker Desktop (Windows/Mac) или Docker + Docker Compose (Linux)
-- Свободные порты: 5432, 8000, 5173
+- Docker Desktop (Windows/Mac) or Docker + Docker Compose (Linux)
+- Available ports: 5432, 8000, 5173
 
-### Windows (рекомендовано)
+### Windows (recommended)
 
 ```powershell
 .\setup_db.ps1
@@ -29,79 +29,79 @@
 ./server_app/scripts/setup_all.sh
 ```
 
-## 🌐 Доступные сервисы
+## 🌐 Available Services
 
-После запуска:
+After launch:
 
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:8000
-- **API Документация**: http://localhost:8000/docs
+- **API Documentation**: http://localhost:8000/docs
 - **PostgreSQL**: localhost:5432
 
-## 🏗️ Архитектура
+## 🏗️ Architecture
 
 ```
 Cluster/
-├── client_app/          # Vue 3 + TypeScript фронтенд
-├── server_app/          # FastAPI бэкенд
-├── docker-compose.yml   # Docker конфигурация
-└── scripts/            # Скрипты настройки
+├── client_app/          # Vue 3 + TypeScript frontend
+├── server_app/          # FastAPI backend
+├── docker-compose.yml   # Docker configuration
+└── scripts/            # Setup scripts
 ```
 
 ### Frontend (client_app)
 
-- **Vue 3** с Composition API и `<script setup>`
-- **TypeScript** для типизации
-- **Vite** для быстрой сборки
-- **Leaflet** для интерактивных карт
-- **AVALIN Viewer** для 3D туров
+- **Vue 3** with Composition API and `<script setup>`
+- **TypeScript** for typing
+- **Vite** for fast builds
+- **Leaflet** for interactive maps
+- **AVALIN Viewer** for 3D tours
 
 ### Backend (server_app)
 
-- **FastAPI** с автоматической документацией
-- **PostgreSQL** с SQLAlchemy ORM
-- **Alembic** для миграций
-- **Локальный TF-IDF** для семантического поиска мест (встроенный, бесплатный)
-- **DeepSeek Chat API** для будущих фич (опционально)
-- **OpenAI/другие embeddings** как альтернатива (опционально)
-- **JWT** аутентификация для партнёров
+- **FastAPI** with automatic documentation
+- **PostgreSQL** with SQLAlchemy ORM
+- **Alembic** for migrations
+- **Local TF-IDF** for semantic place search (built-in, free)
+- **DeepSeek Chat API** for future features (optional)
+- **OpenAI/other embeddings** as an alternative (optional)
+- **JWT** authentication for partners
 
-## 📊 Демо-данные
+## 📊 Demo Data
 
-Проект включает 18 демо-мест с:
+The project includes 18 demo places with:
 
-- ✅ 3D туры AVALIN
-- ✅ Спецпредложения от бизнеса  
-- ✅ AI эмбеддинги для семантического поиска
-- ✅ Фотографии и описания
-- ✅ Геолокации и цены
+- ✅ AVALIN 3D tours
+- ✅ Special offers from businesses
+- ✅ AI embeddings for semantic search
+- ✅ Photos and descriptions
+- ✅ Geolocations and prices
 
-## 🔧 Разработка
+## 🔧 Development
 
-### Запуск в режиме разработки
+### Running in development mode
 
 ```bash
-# Бэкенд
+# Backend
 cd server_app
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
-# Фронтенд
+# Frontend
 cd client_app
 npm run dev
 ```
 
-### Структура API
+### API Structure
 
-- `GET /places` - Получение всех мест
-- `GET /places/{id}` - Детальная информация о месте
-- `POST /places/search` - Семантический поиск
-- `POST /route/generate` - Генерация маршрута
-- `POST /partner/auth/*` - Авторизация партнёров
-- `GET /partner/places` - Места партнёра
+- `GET /places` - Get all places
+- `GET /places/{id}` - Detailed information about a place
+- `POST /places/search` - Semantic search
+- `POST /route/generate` - Generate route
+- `POST /partner/auth/*` - Partner authorization
+- `GET /partner/places` - Partner places
 
-### База данных
+### Database
 
-| Параметр | Значение |
+| Parameter | Value |
 |----------|----------|
 | Host     | localhost |
 | Port     | 5432 |
@@ -109,29 +109,29 @@ npm run dev
 | User     | cluster_user |
 | Password | password |
 
-Строка подключения: `postgresql://cluster_user:password@localhost:5432/clusterdb`
+Connection string: `postgresql://cluster_user:password@localhost:5432/clusterdb`
 
-## 🎯 Для хакатона
+## 🎯 For the Hackathon
 
-### Ключевые преимущества
+### Key Advantages
 
-1. **Вау-эффект**: 3D туры создают впечатляющий пользовательский опыт
-2. **B2B модель**: Партнёры могут добавлять места и спецпредложения
-3. **AI инновации**: Персонализация на основе эмбеддингов
-4. **Масштабируемость**: Легко добавлять новые места и функции
+1. **Wow effect**: 3D tours create an impressive user experience
+2. **B2B model**: Partners can add places and special offers
+3. **AI innovations**: Personalization based on embeddings
+4. **Scalability**: Easily add new places and features
 
-### Демонстрация жюри
+### Demo for Judges
 
-1. Запустите проект через `.\setup_db.ps1`
-2. Откройте http://localhost:5173
-3. Попробуйте 3D туры (кнопки "3D тур" на карточках мест)
-4. Сгенерируйте персональный маршрут
-5. Зайдите в кабинет партнёра для B2B демонстрации
+1. Launch the project with `.\setup_db.ps1`
+2. Open http://localhost:5173
+3. Try 3D tours (the "3D tour" buttons on place cards)
+4. Generate a personalized route
+5. Go to the partner dashboard for a B2B demo
 
-## 📝 Лицензия
+## 📝 License
 
-Проект разработан для хакатона. MIT License.
+The project was developed for a hackathon. MIT License.
 
-## 🤝 Контрибьюторы
+## 🤝 Contributors
 
-- Команда разработки Cluster Hackathon
+- Cluster Hackathon development team
